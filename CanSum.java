@@ -11,7 +11,7 @@ public class CanSum {
 //	}
 	
 	static boolean canSum(int target, int[] numbers, int index) {
-		if (target == 0) {
+		if (target == 0) { 
 			return true;
 		}
 		
