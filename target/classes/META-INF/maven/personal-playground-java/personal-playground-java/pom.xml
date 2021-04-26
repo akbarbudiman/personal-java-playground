@@ -3,6 +3,16 @@
   <groupId>personal-playground-java</groupId>
   <artifactId>personal-playground-java</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/org.javatuples/javatuples -->
+	<dependency>
+	    <groupId>org.javatuples</groupId>
+	    <artifactId>javatuples</artifactId>
+	    <version>1.2</version>
+	</dependency>
+  </dependencies>
+  
   <build>
     <plugins>
       <plugin>

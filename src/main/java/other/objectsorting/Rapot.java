@@ -1,10 +1,11 @@
 package other.objectsorting;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Rapot {
 
-	private Double nilai;
+	private BigDecimal nilai;
 	private String nama;
 	private LocalDate tanggalUjian;
 	
@@ -15,10 +16,10 @@ public class Rapot {
 				.concat(" nama:").concat(this.nama);
 	}
 	
-	public Double getNilai() {
+	public BigDecimal getNilai() {
 		return nilai;
 	}
-	public void setNilai(Double nilai) {
+	public void setNilai(BigDecimal nilai) {
 		this.nilai = nilai;
 	}
 	public String getNama() {

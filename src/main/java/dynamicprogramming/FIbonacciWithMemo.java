@@ -28,9 +28,9 @@ public class FIbonacciWithMemo {
 	}
 	
 	public static void main(String[] args) {
-//		System.out.println(getFibonacciNumber(7));
-//		System.out.println(getFibonacciNumber(8));
-//		System.out.println(getFibonacciNumber(9));
+		System.out.println(getFibonacciNumber(7));
+		System.out.println(getFibonacciNumber(8));
+		System.out.println(getFibonacciNumber(9));
 		System.out.println(getFibonacciNumber(50));
 	}
 	

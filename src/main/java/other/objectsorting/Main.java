@@ -1,32 +1,35 @@
 package other.objectsorting;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
 	public static void main(String[] args) {
 		Rapot rapot1 = new Rapot();
 		rapot1.setNama("moya");
-		rapot1.setNilai((double) 100);
+		rapot1.setNilai(new BigDecimal(100));
 		rapot1.setTanggalUjian(LocalDate.parse("2020-12-31"));
 		
 		Rapot rapot2 = new Rapot();
 		rapot2.setNama("baya");
-		rapot2.setNilai((double) 95);
+		rapot2.setNilai(new BigDecimal(95));
 		rapot2.setTanggalUjian(LocalDate.parse("2020-12-31"));
 		
 		Rapot rapot3 = new Rapot();
 		rapot3.setNama("uyung");
-		rapot3.setNilai((double) 100);
+		rapot3.setNilai(new BigDecimal(100));
 		rapot3.setTanggalUjian(LocalDate.parse("2020-12-24"));
 		
 		Rapot rapot4 = new Rapot();
 		rapot4.setNama("eyeng");
-		rapot4.setNilai((double) 100);
+		rapot4.setNilai(new BigDecimal(100));
 		rapot4.setTanggalUjian(LocalDate.parse("2020-12-24"));
 		
 //		Sebelum diurutkan
@@ -41,25 +44,27 @@ public class Main {
 		
 		
 //		CARA 1
-		List<Rapot> pengumumanRapih1 = new ArrayList<Rapot>();
-		pengumumanRapih1.addAll(pengumuman);
+		List<Rapot> pengumumanRapih1 = new ArrayList<Rapot>(pengumuman);
 		Collections.sort(pengumumanRapih1, new RapotComparator());
 		
-		System.out.println("pengumumanRapih1:");
+		System.out.println("\npengumumanRapih1:");
 		pengumumanRapih1.forEach(rapot -> System.out.println(rapot.toString()));
 		
 		
 //		CARA 2
-		List<Rapot> pengumumanRapih2 = new ArrayList<Rapot>();
-		pengumumanRapih2.addAll(pengumuman);
+		List<Rapot> pengumumanRapih2 = new ArrayList<Rapot>(pengumuman);
 		pengumumanRapih2.sort(
 				Comparator.comparing(Rapot::getTanggalUjian).reversed()
 				.thenComparing(Rapot::getNilai).reversed()
 				.thenComparing(Rapot::getNama));
 		
-		System.out.println("pengumumanRapih2:");
+		System.out.println("\npengumumanRapih2:");
 		pengumumanRapih2.forEach(rapot -> System.out.println(rapot.toString()));
 		
+		System.out.println(pengumumanRapih2.get(0) == pengumuman.get(3));
+		System.out.println(pengumumanRapih2.get(1) == pengumuman.get(2));
+		System.out.println(pengumumanRapih2.get(2) == pengumuman.get(0));
+		System.out.println(pengumumanRapih2.get(3) == pengumuman.get(1));
 		
 //		CARA 3 (implements Comparable<>)
 		RapotCompareable rapotComparable1 = new RapotCompareable(rapot1);
@@ -73,7 +78,7 @@ public class Main {
 		pengumumanRapotComparable.add(rapotComparable3);
 		pengumumanRapotComparable.add(rapotComparable4);
 		Collections.sort(pengumumanRapotComparable);
-		System.out.println("pengumumanRapotComparable:");
+		System.out.println("\npengumumanRapotComparable:");
 		pengumumanRapotComparable.forEach(rapot -> System.out.println(rapot.toString()));
 	}
 }
