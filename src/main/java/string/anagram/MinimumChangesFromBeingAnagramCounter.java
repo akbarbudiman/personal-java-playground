@@ -58,4 +58,8 @@ public class MinimumChangesFromBeingAnagramCounter {
 		return result;
 	}
 	
+	public static void main(String[] args) {	
+		// full testcase: https://www.hackerrank.com/challenges/anagram/problem
+	}
+	
 }

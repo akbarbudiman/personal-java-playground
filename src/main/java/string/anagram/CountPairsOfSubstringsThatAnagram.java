@@ -27,6 +27,8 @@ public class CountPairsOfSubstringsThatAnagram {
 	public static void main(String[] args) {
 		System.out.println(countPairOfSubstringsThatAnagram("ifailuhkqq"));
 		System.out.println(countPairOfSubstringsThatAnagram("kkkk"));
+		
+		// full testcase: https://www.hackerrank.com/challenges/sherlock-and-anagrams/problem
 	}
 	
 }
