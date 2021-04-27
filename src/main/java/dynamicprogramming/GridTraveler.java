@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package src.main.java.dynamicprogramming;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

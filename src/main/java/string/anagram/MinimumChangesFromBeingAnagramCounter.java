@@ -1,11 +1,14 @@
-package string.anagram;
+package src.main.java.string.anagram;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MinimumChangesFromBeingAnagramCounter {
 
 	public static Integer countMinimumChangesForBeingAnagram(String str1, String str2) {
+		if (str1.length() != str2.length()) return -1;
+		
 		Map<Character, Integer> occurencesFirst = new HashMap<Character, Integer>();
 		for (char c : str1.toCharArray()) {
 			if (occurencesFirst.containsKey(c))
@@ -38,6 +41,8 @@ public class MinimumChangesFromBeingAnagramCounter {
 	}
 	
 	public static Integer countMinimumChangesForBeingAnagramWithCountingTheSameChar(String str1, String str2) {
+		if (str1.length() != str2.length()) return -1;
+		
 		Map<Character, Integer> occurences = new HashMap<Character, Integer>();
 		for (char c : str1.toCharArray()) {
 			if (occurences.containsKey(c))
@@ -56,6 +61,19 @@ public class MinimumChangesFromBeingAnagramCounter {
 
 		Integer result = str1.length() - countTheSameChar;
 		return result;
+	}
+	
+	public static Integer countMinimumChangesForBeingAnagramWithSingleLoop(String str1, String str2) {
+		if (str1.length() != str2.length()) return -1;
+		
+		int[] occurences = new int[26];
+		
+		for (int i = 0 ; i < str1.length() ; i = i + 1) {
+			occurences[str1.charAt(i) - 'a']++;
+			occurences[str2.charAt(i) - 'a']--;
+		}
+		
+		return Arrays.stream(occurences).filter(i -> i > 0).sum();
 	}
 	
 	public static void main(String[] args) {	

@@ -1,4 +1,4 @@
-package sorting.objectsorting;
+package src.main.java.sorting.objectsorting;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

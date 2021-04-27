@@ -1,4 +1,4 @@
-package dynamicprogramming;
+package src.main.java.dynamicprogramming;
 
 public class BestSum {
 
