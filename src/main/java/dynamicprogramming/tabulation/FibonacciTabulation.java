@@ -1,4 +1,4 @@
-package src.main.java.dynamicprogramming;
+package src.main.java.dynamicprogramming.tabulation;
 
 public class FibonacciTabulation {
 
