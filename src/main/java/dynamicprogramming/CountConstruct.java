@@ -7,7 +7,7 @@ public class CountConstruct {
 
 	/*
 	 * 2:38:40
-	 * https://youtu.be/oBt53YbR9Kk?t=6735
+	 * https://youtu.be/oBt53YbR9Kk
 	 */
 	
 	public static int countConstruct(String target, String[] wordBank) {
@@ -19,24 +19,24 @@ public class CountConstruct {
 		if (targetLen == 0) return 1;
 		if (memo.get(target) != null) return memo.get(target);
 		
+		int totalWayResult = 0;
 		for (String prefix : wordBank) {
 			if (target.indexOf(prefix) == 0) {
-				int result = countConstruct(target.substring(prefix.length()), wordBank, memo);
-				memo.put(target, result);
-				if (result == 1) {
-					return 1;
-				}
+				int thisWayResult = countConstruct(target.substring(prefix.length()), wordBank, memo);
+				totalWayResult = totalWayResult + thisWayResult;
 			}
 		}
-		
-		memo.put(target, 0);
-		return 0;
+		memo.put(target, totalWayResult);
+		return totalWayResult;
 	}
 	
 	public static void main(String[] args) {
 		System.out.println(countConstruct("abcdef", new String[]{"ab", "abc", "cd", "def", "abcd"}));
 		System.out.println(countConstruct("skateboard", new String[]{"bo", "rd", "ate", "t", "ska", "sk", "boar"}));
+		System.out.println(countConstruct("purple", new String[]{"purp", "p", "ur", "le", "purpl"}));
 		System.out.println(countConstruct("enterapotentpot", new String[]{"a", "p", "ent", "enter", "ot", "o", "t"}));
+		System.out.println(countConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", 
+				new String[]{"e", "ee", "eee", "eeee", "eeeee", "eeeeee"}));
 		System.out.println(countConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", 
 										new String[]{"e", "ee", "eee", "eeee", "eeeee", "eeeeee"}));
 	}
