@@ -7,22 +7,22 @@ import java.util.Queue;
 
 import src.main.java.binarytree.TreeNode;
 
-public class BinaryTreeLevelOrderTraversal {
+public class BinaryTreeLevelOrderTraversal2 {
 	
 	/*
 	 * origin:
-	 * https://leetcode.com/problems/binary-tree-level-order-traversal/
+	 * https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
 	 * 
 	 * given: 
 	 * root of a TreeNode
 	 * 
 	 * result:
 	 * two dimension integer of the node.val : result, 
-	 * where result start from top level to bottom level,
+	 * where result start from BOTTOM level to TOP level,
 	 * and elements of result[i] start from left to right
 	 */
-	
-	public List<List<Integer>> levelOrder(TreeNode root) {
+
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
 		if (root == null) return new ArrayList<>();
 		
 		List<List<Integer>> result = new ArrayList<>();
@@ -47,10 +47,10 @@ public class BinaryTreeLevelOrderTraversal {
 				}
 			}
 			
-			result.add(thisLevelVal);
+			result.add(0, thisLevelVal);
 		}
         
         return result;
     }
-
+    
 }

@@ -6,6 +6,20 @@ import java.util.List;
 import src.main.java.binarytree.TreeNode;
 
 public class BinaryTreeLevelOrderTraversal {
+	
+	/*
+	 * origin:
+	 * https://leetcode.com/problems/binary-tree-level-order-traversal/
+	 * 
+	 * given: 
+	 * root of a TreeNode
+	 * 
+	 * result:
+	 * two dimension integer of the node.val : result, 
+	 * where result start from top level to bottom level,
+	 * and elements of result[i] start from left to right
+	 */
+	
     private List<List<Integer>> result;
     
     public List<List<Integer>> levelOrder(TreeNode root) {
