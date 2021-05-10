@@ -38,9 +38,31 @@ public class IsAnagramChecker {
 		return true;
 	}
 	
+	private static boolean isAnagramAgain(String first, String second) {
+        if (first.length() != second.length()) return false;
+        
+        int[] charRepresentation = new int[26];
+        for (int i = 0 ; i < first.length() ; i++) {
+            charRepresentation[first.charAt(i) - 'a']++;
+            charRepresentation[second.charAt(i) - 'a']--;
+        }
+        
+        for (int val : charRepresentation) {
+            if (val != 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+	
 	public static void main(String[] args) {
 		System.out.println(isAnagramWithoutSorting("abbc", "cbba"));
 		System.out.println(isAnagramWithoutSorting("abc", "def"));
 		System.out.println(isAnagramWithoutSorting("abc", "cde"));
+		
+		System.out.println(isAnagramAgain("abbc", "cbba"));
+		System.out.println(isAnagramAgain("abc", "def"));
+		System.out.println(isAnagramAgain("abc", "cde"));
 	}
 }
